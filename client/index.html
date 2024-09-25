@@ -16,24 +16,26 @@
     <!-- Welcome slogan -->
     Maths Game
   </h1>
-  <div> Emoji
-    <!-- Container for usergenerated name/emoji -Sam and Anu - 24/09/24 1413 -->
-    <!-- js imports a random emoji from api also places it in the class id emojiGames which saves to local storage which then can be used in the datatbase for the leaderboard -->
-    <!-- input username on the form when play game is pressed emjoigames pulls that infomration as well as saving to local storage -->
-    <!-- working thgrough which soloution is better since they require diffrent things username requires a form whicle emoji requires JS haveing worked through we picked emoji due to using an API and thinking abot it being kid friendly which are goals on the project. Since emoji is unicode we can add a generic list of names later as well which adds to a safety element.Looking at using the animal and emjoi catergory which allows us to retirve us from certain categorys.  Sam and Anu  24/09/24 1437 -->
-  </div>
   <div class="playButton">
     <!--Adding in the play button to take the individual to the next page - Sam and Anu - 24/09/24 1409  -->
     <a href="./games.html">Play Game</a>
     <a href="./Leaderboard-page.html">Leaderboard</a>
   </div>
 
+
+  <div> Enter Name Below
+    <!-- Container for usergenerated name/emoji -Sam and Anu - 24/09/24 1413 -->
+    <!-- js imports a random emoji from api also places it in the class id emojiGames which saves to local storage which then can be used in the datatbase for the leaderboard -->
+    <!-- input username on the form when play game is pressed emjoigames pulls that infomration as well as saving to local storage -->
+    <!-- working thgrough which soloution is better since they require diffrent things username requires a form whicle emoji requires JS haveing worked through we picked emoji due to using an API and thinking abot it being kid friendly which are goals on the project. Since emoji is unicode we can add a generic list of names later as well which adds to a safety element.Looking at using the animal and emjoi catergory which allows us to retirve us from certain categorys.  Sam and Anu  24/09/24 1437 -->
+  </div>
+
   </div>
   <form method="POST" id="name-form">
-      <label for="user-name">User_name:</label>
-      <input type= "text" id="user-name" name="user-name" placeholder="Write your name" required>
+    <label for="user-name">User_name:</label>
+    <input type="text" id="user-name" name="user-name" placeholder="Write your name" required>
     <br>
-      <button type="submit" id="submit-name">submit</button>
+    <button type="submit" id="submit-name">submit</button>
   </form>
   <!-- musa added the submit butten 25/09/2024 10:30 -->
 
