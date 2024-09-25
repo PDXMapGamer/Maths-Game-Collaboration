@@ -6,12 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css" />
-  <script type="module" src="./form.js" defer></script>
+  <script type="module" src="./form.js" src="./main.js" defer></script>
   <title>Maths game</title>
 </head>
 
 <body>
-
+  <div id="userEmoji"></div>
   <h1>
     <!-- Welcome slogan -->
     Maths Game
@@ -39,7 +39,7 @@
   </form> -->
   <!-- musa added the submit butten 25/09/2024 10:30 -->
 
-  <form id="usernameForm">
+  <form id="usernameForm" method="POST">
     <!-- action="server.js" method="POST" -->
     <label for="username">Username</label><br>
     <input type="text" id="username" name="username" palceholder="Write your name"><br>
