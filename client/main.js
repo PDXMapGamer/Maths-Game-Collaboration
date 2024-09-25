@@ -4,44 +4,37 @@ const homePage = document.getElementById("index-section");
 const gamesPage = document.getElementById("games-section");
 const leaderboardPage = document.getElementById("leaderboard-section");
 // removed some links as only using a nav bar for ease of styling and use -Anu
-document
-  .getElementById("games-link")
-  .addEventListener("click", loadGamesSection);
+document.getElementById("games-link").addEventListener("click", loadGamesSection);
 // document.getElementById("leaderboard-games-link").addEventListener("click", loadGamesSection);
 document.getElementById("home-link").addEventListener("click", loadHomeSection);
 // document.getElementById("leaderboard-home-link").addEventListener("click", loadHomeSection);
-document
-  .getElementById("leaderboard-link")
-  .addEventListener("click", loadLeaderboardSection);
+document.getElementById("leaderboard-link").addEventListener("click", loadLeaderboardSection);
 // document.getElementById("games-leaderboard-link").addEventListener("click", loadLeaderboardSection);
 const timerContainer = document.getElementById("timerContainer");
 const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", timerEventHandler);
 startButton.addEventListener("click", timeCounterEventHandler);
-document
-  .getElementById("usernameForm")
-  .addEventListener("submit", async (event) => {
-    event.preventDefault();
-    let user_name = document.getElementById(`username`).value;
-    console.log(user_name);
-    try {
-      const response = await fetch("http://localhost:8080/submitUserScore", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user_name }),
-      });
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-      const data = await response.json();
-      console.log(JSON.stringify(user_name));
-      document.getElementById("userEmoji").textContent = user_name;
-    } catch (error) {
-      console.error("fail to fetch username", error);
-      document.getElementById("userEmoji").textContent =
-        "error cannot find username";
+document.getElementById("usernameForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  let user_name = document.getElementById(`username`).value;
+  console.log(user_name);
+  try {
+    const response = await fetch("http://localhost:8080/submitUserScore", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_name }),
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
     }
-  });
+    const data = await response.json();
+    console.log(JSON.stringify(user_name));
+    document.getElementById("userEmoji").textContent = user_name;
+  } catch (error) {
+    console.error("fail to fetch username", error);
+    document.getElementById("userEmoji").textContent = "error cannot find username";
+  }
+});
 //adding event listners
 
 function timerEventHandler() {
@@ -98,12 +91,12 @@ function timeCounterEventHandler() {
 function loadHomeSection() {
   homePage.style.display = "block"; //! Change this to whatever display style you choose to style home page with
   gamesPage.style.display = "none";
-  leaderboardPage.display = "none";
+  leaderboardPage.style.display = "none";
 }
 function loadGamesSection() {
   homePage.style.display = "none";
-  gamesPage.style.display = "block";
-  leaderboardPage.display = "none";
+  gamesPage.style.display = "grid";
+  leaderboardPage.style.display = "none";
 }
 function loadLeaderboardSection() {
   homePage.style.display = "none";
