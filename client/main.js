@@ -3,37 +3,45 @@ console.log(`Hello`); //checking everything is linked.
 const homePage = document.getElementById("index-section");
 const gamesPage = document.getElementById("games-section");
 const leaderboardPage = document.getElementById("leaderboard-section");
-document.getElementById("home-games-link").addEventListener("click", loadGamesSection);
-document.getElementById("leaderboard-games-link").addEventListener("click", loadGamesSection);
-document.getElementById("games-home-link").addEventListener("click", loadHomeSection);
-document.getElementById("leaderboard-home-link").addEventListener("click", loadHomeSection);
-document.getElementById("home-leaderboard-link").addEventListener("click", loadLeaderboardSection);
-document.getElementById("games-leaderboard-link").addEventListener("click", loadLeaderboardSection);
+// removed some links as only using a nav bar for ease of styling and use -Anu
+document
+  .getElementById("games-link")
+  .addEventListener("click", loadGamesSection);
+// document.getElementById("leaderboard-games-link").addEventListener("click", loadGamesSection);
+document.getElementById("home-link").addEventListener("click", loadHomeSection);
+// document.getElementById("leaderboard-home-link").addEventListener("click", loadHomeSection);
+document
+  .getElementById("leaderboard-link")
+  .addEventListener("click", loadLeaderboardSection);
+// document.getElementById("games-leaderboard-link").addEventListener("click", loadLeaderboardSection);
 const timerContainer = document.getElementById("timerContainer");
 const startButton = document.getElementById("startButton");
 startButton.addEventListener("click", timerEventHandler);
 startButton.addEventListener("click", timeCounterEventHandler);
-document.getElementById("usernameForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  let user_name = document.getElementById(`username`).value;
-  console.log(user_name);
-  try {
-    const response = await fetch("http://localhost:8080/submitUserScore", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ user_name }),
-    });
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
+document
+  .getElementById("usernameForm")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+    let user_name = document.getElementById(`username`).value;
+    console.log(user_name);
+    try {
+      const response = await fetch("http://localhost:8080/submitUserScore", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user_name }),
+      });
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+      }
+      const data = await response.json();
+      console.log(JSON.stringify(user_name));
+      document.getElementById("userEmoji").textContent = user_name;
+    } catch (error) {
+      console.error("fail to fetch username", error);
+      document.getElementById("userEmoji").textContent =
+        "error cannot find username";
     }
-    const data = await response.json();
-    console.log(JSON.stringify(user_name));
-    document.getElementById("userEmoji").textContent = user_name;
-  } catch (error) {
-    console.error("fail to fetch username", error);
-    document.getElementById("userEmoji").textContent = "error cannot find username";
-  }
-});
+  });
 //adding event listners
 
 function timerEventHandler() {
@@ -86,15 +94,15 @@ function timeCounterEventHandler() {
     } //had to add an if function for the alert Sam 25/09/24 1000. Still not resrting when I press the button so will have another think of how I want to achive this Sam 25/09/24 1014. Took out alert since it was janky will link sperately Sam 25/09/24 1019 Added the alert back in had to use setTimeout function to make it appear after and less janky. Sam 25/09/25 1031
   }, 1000);
 }
-
+//changed all visible display blocks to block as grid was messing with the layout for now
 function loadHomeSection() {
-  homePage.style.display = "block"; //! Change this to whatever display style you choose to style leaderboard page with
+  homePage.style.display = "block"; //! Change this to whatever display style you choose to style home page with
   gamesPage.style.display = "none";
   leaderboardPage.display = "none";
 }
 function loadGamesSection() {
   homePage.style.display = "none";
-  gamesPage.style.display = "grid";
+  gamesPage.style.display = "block";
   leaderboardPage.display = "none";
 }
 function loadLeaderboardSection() {
