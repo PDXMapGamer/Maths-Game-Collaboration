@@ -10,6 +10,9 @@ db.query(`CREATE TABLE IF NOT EXISTS leaderboard(
     random_score SMALLINT
 )`);
 
-db.query(
-  `INSERT INTO leaderboard (user_name, addition_score) VALUES ('Musa','2' )`
-);
+// db.query(`ALTER TABLE leaderboard ALTER COLUMN addition_score SET DEFAULT 0;`);
+// db.query(`ALTER TABLE leaderboard ALTER COLUMN subtraction_score SET DEFAULT 0;`);
+// db.query(`ALTER TABLE leaderboard ALTER COLUMN multiplication_score SET DEFAULT 0;`);
+// db.query(`ALTER TABLE leaderboard ALTER COLUMN division_score SET DEFAULT 0;`);
+// db.query(`ALTER TABLE leaderboard ALTER COLUMN random_score SET DEFAULT 0;`);
+db.query(`INSERT INTO leaderboard (user_name, addition_score, division_score) VALUES ('Musa','5','2')`);
