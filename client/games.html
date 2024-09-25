@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <script src="./main.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -39,10 +41,17 @@
     <button id="multiplicationSelector">x</button>
     <button id="divideSelector">÷</button>
     <button id="randomSelector">+-x÷</button>
+    <button id="startButton">START</button>
   </div>
   </header>
   <main>
-    <div id="timer">timer</div>
+    <div id="timerContainerMaster">
+      <p>Timer</p>
+      <div id="countdownTimer"></div>
+      <div id="timerContainer" class="timerContainer">
+
+      </div>
+    </div>
     <section id="maths-area">maths area.</section>
   </main>
 </body>
