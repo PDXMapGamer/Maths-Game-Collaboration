@@ -5,3 +5,5 @@ Sam,Anu,Thomas,Moussa--- 24/09/24 1501 - Added links to all pages so that we can
 Sam --- 25/09/2024 1035 - I have vreated a timer on the games page and tried to make it visual as well as timing - emphasis on TRIED.
 
 Sam -- 25/09/2024 1456 - I have added a form which submits to the endpoint. with help form Joe.
+
+Sam -- 25/09/2024 2317 - I have added a footer.

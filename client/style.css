@@ -66,3 +66,91 @@ a:hover {
 
   src: url(assets/fonts/Pixel\ Game\ Extrude.otf) format("opentype");
 }
+
+.fa-github1 {
+  /*placing github photo*/
+  position: fixed;
+  bottom: 2%;
+  left: 2%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  background: radial-gradient(
+    circle at 30% 110%,
+    #678079 0%,
+    #88ab98 25%,
+    #f2c35c 50%,
+    #a67b40 75%,
+    #36373a 100%
+  );
+  border-radius: 10px;
+  opacity: 0.5;
+}
+.fa-github2 {
+  /*placing github photo*/
+  position: fixed;
+  bottom: 2%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  background: radial-gradient(
+    circle at 30% 110%,
+    #678079 0%,
+    #88ab98 25%,
+    #f2c35c 50%,
+    #a67b40 75%,
+    #36373a 100%
+  );
+  border-radius: 10px;
+  opacity: 0.5;
+}
+.fa-github3 {
+  /*placing github photo*/
+  position: fixed;
+  bottom: 2%;
+  left: 8%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  background: radial-gradient(
+    circle at 30% 110%,
+    #678079 0%,
+    #88ab98 25%,
+    #f2c35c 50%,
+    #2c1a00 75%,
+    #36373a 100%
+  );
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.fa-github4 {
+  /*placing github photo*/
+  position: fixed;
+  bottom: 2%;
+  left: 11%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  background: radial-gradient(
+    circle at 30% 110%,
+    #678079 0%,
+    #88ab98 25%,
+    #f2c35c 50%,
+    #a67b40 75%,
+    #36373a 100%
+  );
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.fa:hover {
+  /*generic hover for social media*/
+  box-shadow: 0 5px 35px 0px rgba(255, 255, 255, 0.795);
+  opacity: 1;
+}
