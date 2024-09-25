@@ -58,9 +58,3 @@ function timeCounterEventHandler() {
     } //had to add an if function for the alert Sam 25/09/24 1000. Still not resrting when I press the button so will have another think of how I want to achive this Sam 25/09/24 1014. Took out alert since it was janky will link sperately Sam 25/09/24 1019 Added the alert back in had to use setTimeout function to make it appear after and less janky. Sam 25/09/25 1031
   }, 1000);
 }
-
-let submitButton = document.getElementById("myButton");
-
-submitButton.onclick = function () {
-  location.href = "./games.html";
-};

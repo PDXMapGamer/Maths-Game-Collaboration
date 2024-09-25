@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css" />
-  <script type="module" src="./main.js" defer></script>
+  <script type="module" src="./form.js" defer></script>
   <title>Maths game</title>
 </head>
 
@@ -31,13 +31,21 @@
   </div>
 
   </div>
-  <form method="POST" id="name-form">
-    <label for="user-name">User_name:</label>
+  <!-- <form method="POST" id="name-form">
+    <label for="user-name">Username:</label>
     <input type="text" id="user-name" name="user-name" placeholder="Write your name" required>
     <br>
-    <button type="submit" id="submit-name">submit</button>
-  </form>
+    <input type="submit" id="submit-name" value="submit"></input>
+  </form> -->
   <!-- musa added the submit butten 25/09/2024 10:30 -->
+
+  <form id="usernameForm">
+    <!-- action="server.js" method="POST" -->
+    <label for="username">Username</label><br>
+    <input type="text" id="username" name="username" palceholder="Write your name"><br>
+    <button type="submit" id="submitButton">Submit</button>
+  </form>
+
 
 </body>
 
