@@ -11,13 +11,19 @@ body {
   width: 100vw;
   height: 100vh;
 }
-#games-body {
-  display: grid;
+a:hover {
+  cursor: pointer;
+}
+#games-section {
+  display: none;
   grid-template-columns: 1fr;
   grid-template-rows: 0.5fr 0.75fr 3fr;
   grid-column-gap: 0px;
 }
-#games-header {
+#leaderboard-section {
+  display: none;
+}
+#operator-buttons {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
@@ -52,4 +58,3 @@ body {
 
   src: url(assets/fonts/Pixel\ Game\ Extrude.otf) format("opentype");
 }
-
