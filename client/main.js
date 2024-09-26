@@ -5,6 +5,9 @@ const gamesPage = document.getElementById("games-section");
 const leaderboardPage = document.getElementById("leaderboard-section");
 // removed some links as only using a nav bar for ease of styling and use -Anu
 document
+  .getElementById("submitButton")
+  .addEventListener("click", loadGamesSection);
+document
   .getElementById("games-link")
   .addEventListener("click", loadGamesSection);
 // document.getElementById("leaderboard-games-link").addEventListener("click", loadGamesSection);
