@@ -15,4 +15,17 @@ db.query(`CREATE TABLE IF NOT EXISTS leaderboard(
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN multiplication_score SET DEFAULT 0;`);
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN division_score SET DEFAULT 0;`);
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN random_score SET DEFAULT 0;`);
-db.query(`INSERT INTO leaderboard (user_name, addition_score, subtraction_score) VALUES ('Thomas','11','10')`);
+// db.query(`INSERT INTO leaderboard (user_name, addition_score, subtraction_score) VALUES ('Thomas','11','10')`);
+
+// let operator = "division_score";
+// let score = "8";
+// let username = "Thomas";
+// db.query(`UPDATE leaderboard
+//     SET ${operator} = ${score}
+//     WHERE user_name = '${username}'`);
+let operator = "multiplication_score";
+let score = "11";
+let username = "Thomas";
+db.query(`UPDATE leaderboard 
+    SET ${operator} = ${score} 
+    WHERE user_name = '${username}'`);
