@@ -109,8 +109,57 @@ function loadGamesSection() {
   gamesPage.style.display = "grid";
   leaderboardPage.style.display = "none";
 }
-function loadLeaderboardSection() {
+async function loadLeaderboardSection() {
   homePage.style.display = "none";
   gamesPage.style.display = "none";
   leaderboardPage.style.display = "block"; //! Change this to whatever display style you choose to style leaderboard page with
+  const leaderboardGrid = document.createElement("div");
+  leaderboardGrid.classList.add("leaderboard-grid");
+  leaderboardPage.append(leaderboardGrid);
+  let name = createGridItem();
+  let addScore = createGridItem();
+  let substractScore = createGridItem();
+  let multiplyScore = createGridItem();
+  let divideScore = createGridItem();
+  let randomScore = createGridItem();
+  name.textContent = "Username:";
+  leaderboardGrid.append(name);
+  addScore.textContent = "Add:";
+  leaderboardGrid.append(addScore);
+  substractScore.textContent = "subtract:";
+  leaderboardGrid.append(substractScore);
+  multiplyScore.textContent = "Multiply:";
+  leaderboardGrid.append(multiplyScore);
+  divideScore.textContent = "Divide:";
+  leaderboardGrid.append(divideScore);
+  randomScore.textContent = "Random:";
+  leaderboardGrid.append(randomScore);
+  try {
+    const response = await fetch("http://localhost:8080/get-leaderboard", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
+    }
+    const leaderboard = await response.json();
+    leaderboardGrid.style.gridTemplateRows = `repeat(${leaderboard.length + 1}, 1fr)`;
+    leaderboard.forEach((element) => {
+      Object.entries(element).forEach((element) => {
+        if (element[0] != "id") {
+          const appendee = createGridItem();
+          appendee.textContent = element[1];
+          leaderboardGrid.append(appendee);
+        }
+      });
+    });
+  } catch (error) {
+    console.error("fail to fetch data from leaderboard", error);
+    document.getElementById("leaderboard-section").textContent = "error cannot access leaderboard";
+  }
+}
+function createGridItem() {
+  const gridItem = document.createElement("p");
+  gridItem.classList.add("grid-item");
+  return gridItem;
 }

@@ -22,6 +22,15 @@ body {
 a:hover {
   cursor: pointer;
 }
+.leaderboard-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow: scroll;
+}
+.grid-item {
+  min-width: 100px;
+  min-height: 50px;
+}
 #games-section {
   display: none;
   grid-template-columns: 1fr;
@@ -78,14 +87,7 @@ a:hover {
   height: 50px;
   text-align: center;
   text-decoration: none;
-  background: radial-gradient(
-    circle at 30% 110%,
-    #678079 0%,
-    #88ab98 25%,
-    #f2c35c 50%,
-    #a67b40 75%,
-    #36373a 100%
-  );
+  background: radial-gradient(circle at 30% 110%, #678079 0%, #88ab98 25%, #f2c35c 50%, #a67b40 75%, #36373a 100%);
   border-radius: 10px;
   opacity: 0.5;
 }
@@ -98,14 +100,7 @@ a:hover {
   height: 50px;
   text-align: center;
   text-decoration: none;
-  background: radial-gradient(
-    circle at 30% 110%,
-    #678079 0%,
-    #88ab98 25%,
-    #f2c35c 50%,
-    #a67b40 75%,
-    #36373a 100%
-  );
+  background: radial-gradient(circle at 30% 110%, #678079 0%, #88ab98 25%, #f2c35c 50%, #a67b40 75%, #36373a 100%);
   border-radius: 10px;
   opacity: 0.5;
 }
@@ -118,14 +113,7 @@ a:hover {
   height: 50px;
   text-align: center;
   text-decoration: none;
-  background: radial-gradient(
-    circle at 30% 110%,
-    #678079 0%,
-    #88ab98 25%,
-    #f2c35c 50%,
-    #2c1a00 75%,
-    #36373a 100%
-  );
+  background: radial-gradient(circle at 30% 110%, #678079 0%, #88ab98 25%, #f2c35c 50%, #2c1a00 75%, #36373a 100%);
   border-radius: 10px;
   opacity: 0.5;
 }
@@ -139,14 +127,7 @@ a:hover {
   height: 50px;
   text-align: center;
   text-decoration: none;
-  background: radial-gradient(
-    circle at 30% 110%,
-    #678079 0%,
-    #88ab98 25%,
-    #f2c35c 50%,
-    #a67b40 75%,
-    #36373a 100%
-  );
+  background: radial-gradient(circle at 30% 110%, #678079 0%, #88ab98 25%, #f2c35c 50%, #a67b40 75%, #36373a 100%);
   border-radius: 10px;
   opacity: 0.5;
 }

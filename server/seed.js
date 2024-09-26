@@ -15,4 +15,4 @@ db.query(`CREATE TABLE IF NOT EXISTS leaderboard(
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN multiplication_score SET DEFAULT 0;`);
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN division_score SET DEFAULT 0;`);
 // db.query(`ALTER TABLE leaderboard ALTER COLUMN random_score SET DEFAULT 0;`);
-db.query(`INSERT INTO leaderboard (user_name, addition_score, division_score) VALUES ('Musa','5','2')`);
+db.query(`INSERT INTO leaderboard (user_name, addition_score, subtraction_score) VALUES ('Thomas','11','10')`);
