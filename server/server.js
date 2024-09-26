@@ -50,13 +50,13 @@ app.post("/submitUserScore", async (request, response) => {
   const username = request.body.username;
   const score = request.body.score;
   const operator = request.body.operator;
-  try {
-    const highScore = await db.query(`SELECT ${operator} 
-      FROM leaderboard 
-      WHERE user_name = ${username};`);
-  } catch {
-    console.log("Error getting database."); //Placeholder error
-  }
+  // try { (Unfinished logic for checking if user got a high score)
+  //   const highScore = await db.query(`SELECT ${operator}
+  //     FROM leaderboard
+  //     WHERE user_name = ${username};`);
+  // } catch {
+  //   console.log("Error getting database."); //Placeholder error
+  // }
   try {
     await db.query(`UPDATE leaderboard 
       SET ${operator} = ${score} 
@@ -64,5 +64,6 @@ app.post("/submitUserScore", async (request, response) => {
   } catch {
     console.log("Error updating leaderboard"); //placeholder error
   }
+  //Test response to use with thunderclient.
   response.json({ message: `Username: ${username}, Score: ${score}, Operator: ${operator}` });
 });
