@@ -10,29 +10,26 @@
   <title>Maths game</title>
 </head>
 <!-- made a static navigation bar to stay on page throughout game - Anu -->
+  
 
-
-
-
+    
+  
 
 <section id="body-grid-container">
-
 <body >
   <header>
     <nav> 
-
       <div id="game-logo">Maths BlitZ</div>
       <!-- Welcome slogan -->
-      <ul class="mainnavbar"></ul>
+       <ul class="mainnavbar"></ul>
       <li><a id="home-link" class="anav home-link">Homepage</a></li>
       <li><a id="games-link" class="anav games-link">Game</a></li>
       <li><a id="leaderboard-link" class="anav leaderboard-link">Leaderboard</a></li>
-      </ul>
-
+    </ul>
+      
     </nav>
   </header>
     <!-- moved nav bar and did some basic effects this should work for everything and makes it look a liitle cleaniner colours need to change. 26/09/24 0938 -->
-
   <!-- index-section will be the first section the user sees before being taken to middle-section after clicking submit -Anu  -->
 
   
@@ -64,28 +61,16 @@
       <button id="randomSelector">+-x÷</button>
       <!-- Maybe have the random button say "All of them!" -->
     </section>
-    <section id="games-section" class="hidden">
-      <section id="operator-buttons">
-        <!-- Add hover CSS explaing what each button does  -->
-        <!-- In JS add an onclickeventlistner -->
-        <button id="additionSelector">+</button>
-        <button id="minusSelector">-</button>
-        <button id="multiplicationSelector">x</button>
-        <button id="divideSelector">÷</button>
-        <button id="randomSelector">+-x÷</button>
-        <!-- Maybe have the random button say "All of them!" -->
-      </section>
-      <!-- <div class="playButton"></div>
+    <!-- <div class="playButton"></div>
         <Adding in the play button to take the individual to the next page - Sam and Anu - 24/09/24 1409 removed this as all pages now collated into one -->
-      <!-- <a id="home-games-link">Play Game</a>
+    <!-- <a id="home-games-link">Play Game</a>
       </div> -->
-      <!-- this is the where user will be taken after pressing the submit button on the form -Anu -->
-      <section id="middle-section">
-        <!-- <section id="links-section">
+    <!-- this is the where user will be taken after pressing the submit button on the form -Anu -->
+    <section id="middle-section">
+      <!-- <section id="links-section">
           <a id="games-home-link">Home</a>
           <a id="games-leaderboard-link">Leaderboard</a>
         </section> -->
-
       <section id="start-score-section">
         <div id="userEmoji"></div>
         <p id="score-display">Score:</p>
@@ -95,22 +80,17 @@
           <!-- Append in JS -->
           
           <!-- Making the score divs and where to put the updates - may change later once we have added other parts. Sam and Anu 24/09/24 1452 -->
-
         </div>
-        <section id="maths-area">
-          <div id="mathsQuestion"></div>
-          <form id='answerForm'>
-            <input type="text" id="answerInput" name="answerInput" placeholder="Write your answer">
-            <button id='answerSubmit'>submit</button>
-          </form>
-        </section>
       </section>
     </section>
-    <section id="leaderboard-section" class="hidden">
-
-      <h1>Leaderboard</h1>
+    <section>
+      <div id="timerContainerMaster">
+        <p>Timer</p>
+        <div id="countdownTimer"></div>
+        <div id="timerContainer" class="timerContainer"></div>
+      </div>
+      <section id="maths-area">maths area.</section>
     </section>
-
   </section>
   <section id="leaderboard-section">
     <!-- HTML added in JS -->
@@ -125,7 +105,5 @@
 
   </footer>
 </body>
-
 </section>
-
 </html>
