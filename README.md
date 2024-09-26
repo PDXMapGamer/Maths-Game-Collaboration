@@ -7,3 +7,5 @@ Sam --- 25/09/2024 1035 - I have vreated a timer on the games page and tried to 
 Sam -- 25/09/2024 1456 - I have added a form which submits to the endpoint. with help form Joe.
 
 Sam -- 25/09/2024 2317 - I have added a footer.
+
+Sam -- 26/09/2024 0942 - I have added a nav bar and some somple effects.

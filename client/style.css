@@ -154,3 +154,86 @@ a:hover {
   box-shadow: 0 5px 35px 0px rgba(255, 255, 255, 0.795);
   opacity: 1;
 }
+
+.usernameForm {
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+}
+
+.letsPlayButton {
+  margin: 10px;
+  border: solid;
+  border-radius: 5px;
+  display: inline-block;
+  background: rgb(0, 178, 238);
+  transition: 0s "\21E2";
+  cursor: pointer;
+}
+
+.letsPlayButton:hover {
+  background-color: rgb(0, 255, 191);
+  transition-duration: 0.5s;
+}
+
+.btn-arrow {
+  position: relative;
+  transition: background-color 300ms ease-out;
+  span {
+    display: inline-block;
+    position: relative;
+    transition: all 300ms ease-out;
+    will-change: transform;
+  }
+  &:hover span {
+    transform: translate3d(-1rem, 0, 0);
+  }
+}
+
+.nav {
+  /*nav bar - aiming to make it horizontal across the top with individual placement in different places */
+  list-style: none;
+  width: 100%;
+}
+
+.mainnavbar {
+  /*code for Nav bar code for making a list*/
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.mainnavlink {
+  /*changing font size for main list so it stands out more*/
+  font-size: larger;
+  /* pointer-events: none; */
+}
+
+li {
+  /*code for Nav bar elements in my list */
+  margin: 1%;
+  width: 10%;
+  display: inline-block;
+}
+.anav {
+  /*code for Nav bar making the individual elements in the list look nice also setting up for the transition effect*/
+  font-size: 100%;
+  padding: 5%;
+  color: rgb(0, 115, 255);
+  text-decoration: none;
+  background-image: linear-gradient(rgb(0, 174, 255), rgb(0, 191, 255));
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  transition: 1s;
+}
+
+.anav:hover {
+  /*code for Nav bar when hover over a list changes the color of the writing - and highlights slowly*/
+  color: black;
+  background-size: 100% 100%;
+}
