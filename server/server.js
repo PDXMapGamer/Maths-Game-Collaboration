@@ -28,15 +28,13 @@ app.get("/get-leaderboard", async (request, response) => {
   response.json(result.rows);
 });
 
-app.post("/submitUserScore", async (request, response) => {
+app.post("/submitUserName", async (request, response) => {
   const { user_name } = request.body;
   console.log(user_name);
   // console.log(addition_score);
   console.log(request.body);
   try {
-    await db.query(`INSERT INTO leaderboard (user_name) VALUES ($1)`, [
-      user_name,
-    ]);
+    await db.query(`INSERT INTO leaderboard (user_name) VALUES ($1)`, [user_name]);
     response.status(200).json({ success: true });
   } catch (error) {
     response.status(500).json({ success: false });

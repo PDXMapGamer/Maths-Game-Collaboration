@@ -51,9 +51,10 @@ const leaderboardPage = document.getElementById('leaderboard-section');
 const mathsArea = document.getElementById('mathsQuestion');
 const scoreDisplay = document.getElementById('score-display');
 // removed some links as only using a nav bar for ease of styling and use -Anu
-document
-  .getElementById('games-link')
-  .addEventListener('click', loadGamesSection);
+
+document.getElementById("submitButton").addEventListener("click", loadGamesSection);
+document.getElementById("games-link").addEventListener("click", loadGamesSection);
+
 // document.getElementById("leaderboard-games-link").addEventListener("click", loadGamesSection);
 document.getElementById('home-link').addEventListener('click', loadHomeSection);
 // document.getElementById("leaderboard-home-link").addEventListener("click", loadHomeSection);
@@ -61,33 +62,23 @@ document
   .getElementById('leaderboard-link')
   .addEventListener('click', loadLeaderboardSection);
 // document.getElementById("games-leaderboard-link").addEventListener("click", loadLeaderboardSection);
-const timerContainer = document.getElementById('timerContainer');
-const startButton = document.getElementById('startButton');
-startButton.addEventListener('click', timerEventHandler);
-startButton.addEventListener('click', timeCounterEventHandler);
-startButton.addEventListener('click', generateAdd);
-document
-  .getElementById('usernameForm')
-  .addEventListener('submit', async (event) => {
-    event.preventDefault();
-    let user_name = document.getElementById(`username`).value;
-    console.log(user_name);
-    try {
-      const response = await fetch('http://localhost:8080/submitUserScore', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_name }),
-      });
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-      const data = await response.json();
-      console.log(JSON.stringify(user_name));
-      document.getElementById('userEmoji').textContent = user_name;
-    } catch (error) {
-      console.error('fail to fetch username', error);
-      document.getElementById('userEmoji').textContent =
-        'error cannot find username';
+
+const timerContainer = document.getElementById("timerContainer");
+const startButton = document.getElementById("startButton");
+startButton.addEventListener("click", timerEventHandler);
+startButton.addEventListener("click", timeCounterEventHandler);
+document.getElementById("usernameForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  let user_name = document.getElementById(`username`).value;
+  console.log(user_name);
+  try {
+    const response = await fetch("http://localhost:8080/submitUserName", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_name }),
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
     }
   });
 //adding event listners
@@ -136,6 +127,7 @@ function timeCounterEventHandler() {
     //Sam 24/09/24 2239
     if (seconds < 0) {
       clearInterval(timerCounter);
+      npm;
       setTimeout(() => {
         alert('Time is up your score is will be submitted to the leaderboard');
       }, 500);
@@ -153,8 +145,63 @@ function loadGamesSection() {
   gamesPage.style.display = 'grid';
   leaderboardPage.style.display = 'none';
 }
-function loadLeaderboardSection() {
-  homePage.style.display = 'none';
-  gamesPage.style.display = 'none';
-  leaderboardPage.style.display = 'block'; //! Change this to whatever display style you choose to style leaderboard page with
+
+async function loadLeaderboardSection() {
+  homePage.style.display = "none";
+  gamesPage.style.display = "none";
+  leaderboardPage.style.display = "block"; //! Change this to whatever display style you choose to style leaderboard page with
+  leaderboardPage.innerHTML = "";
+  const title = document.createElement("h1");
+  title.textContent = "Leaderboard!";
+  leaderboardPage.append(title);
+  const leaderboardGrid = document.createElement("div");
+  leaderboardGrid.classList.add("leaderboard-grid");
+  leaderboardPage.append(leaderboardGrid);
+  let name = createGridItem();
+  let addScore = createGridItem();
+  let substractScore = createGridItem();
+  let multiplyScore = createGridItem();
+  let divideScore = createGridItem();
+  let randomScore = createGridItem();
+  name.textContent = "Username:";
+  leaderboardGrid.append(name);
+  addScore.textContent = "Add:";
+  leaderboardGrid.append(addScore);
+  substractScore.textContent = "subtract:";
+  leaderboardGrid.append(substractScore);
+  multiplyScore.textContent = "Multiply:";
+  leaderboardGrid.append(multiplyScore);
+  divideScore.textContent = "Divide:";
+  leaderboardGrid.append(divideScore);
+  randomScore.textContent = "Random:";
+  leaderboardGrid.append(randomScore);
+  try {
+    const response = await fetch("http://localhost:8080/get-leaderboard", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText}`);
+    }
+    const leaderboard = await response.json();
+    leaderboardGrid.style.gridTemplateRows = `repeat(${leaderboard.length + 1}, 1fr)`;
+    leaderboard.forEach((element) => {
+      Object.entries(element).forEach((element) => {
+        if (element[0] != "id") {
+          const appendee = createGridItem();
+          appendee.textContent = element[1];
+          leaderboardGrid.append(appendee);
+        }
+      });
+    });
+  } catch (error) {
+    console.error("fail to fetch data from leaderboard", error);
+    document.getElementById("leaderboard-section").textContent = "error cannot access leaderboard";
+  }
+}
+function createGridItem() {
+  const gridItem = document.createElement("p");
+  gridItem.classList.add("grid-item");
+  return gridItem;
+
 }
