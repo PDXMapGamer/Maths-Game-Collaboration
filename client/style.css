@@ -81,10 +81,13 @@ a:hover {
 }
 footer {
   position: relative;
-}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+} 
 .fa-github1 {
   /*placing github photo*/
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 2%;
   width: 50px;
@@ -97,7 +100,7 @@ footer {
 }
 .fa-github2 {
   /*placing github photo*/
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 5%;
   width: 50px;
@@ -110,7 +113,7 @@ footer {
 }
 .fa-github3 {
   /*placing github photo*/
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 8%;
   width: 50px;
@@ -124,7 +127,7 @@ footer {
 
 .fa-github4 {
   /*placing github photo*/
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 11%;
   width: 50px;
