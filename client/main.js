@@ -67,7 +67,7 @@ document.getElementById("usernameForm").addEventListener("submit", async (event)
   let user_name = document.getElementById(`username`).value;
   console.log(user_name);
   try {
-    const response = await fetch("http://localhost:8080/submitUserName", {
+    const response = await fetch("https://maths-game-server-e8fm.onrender.com/submitUserName", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user_name }),
@@ -177,7 +177,7 @@ async function loadLeaderboardSection() {
   randomScore.textContent = "Random:";
   leaderboardGrid.append(randomScore);
   try {
-    const response = await fetch("http://localhost:8080/get-leaderboard", {
+    const response = await fetch("https://maths-game-server-e8fm.onrender.com/get-leaderboard", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
